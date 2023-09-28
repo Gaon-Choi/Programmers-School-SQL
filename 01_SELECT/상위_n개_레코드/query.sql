@@ -1,0 +1,6 @@
+-- 코드를 입력하세요
+SELECT  T1.Name AS Name
+FROM    ANIMAL_INS T1
+ORDER BY
+        T1.DATETIME ASC
+LIMIT 1
