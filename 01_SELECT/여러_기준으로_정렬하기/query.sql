@@ -1,0 +1,8 @@
+-- 코드를 입력하세요
+SELECT  T1.ANIMAL_ID    AS ANIMAL_ID
+    ,   T1.NAME         AS NAME
+    ,   T1.DATETIME     AS DATETIME
+FROM    ANIMAL_INS T1
+ORDER BY
+        T1.NAME     ASC
+    ,   T1.DATETIME DESC
