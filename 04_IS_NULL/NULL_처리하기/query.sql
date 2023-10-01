@@ -1,0 +1,7 @@
+-- 코드를 입력하세요
+SELECT  T1.ANIMAL_TYPE              AS 'ANIMAL_TYPE'
+    ,   IFNULL(T1.NAME, 'No name')  AS 'NAME'
+    ,   T1.SEX_UPON_INTAKE          AS 'SEX_UPON_INTAKE'
+FROM    ANIMAL_INS T1
+ORDER BY
+        T1.ANIMAL_ID    ASC
