@@ -1,0 +1,12 @@
+-- 코드를 작성해주세요
+SELECT  COUNT(*)    AS 'FISH_COUNT'
+    ,   (
+        SELECT  FISH_NAME
+        FROM    FISH_NAME_INFO
+        WHERE   FISH_TYPE   = T1.FISH_TYPE
+    )   AS 'FISH_NAME'
+FROM    FISH_INFO T1
+GROUP BY
+        T1.FISH_TYPE
+ORDER BY
+        FISH_COUNT  DESC
