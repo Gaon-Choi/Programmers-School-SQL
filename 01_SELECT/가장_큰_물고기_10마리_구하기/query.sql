@@ -1,0 +1,9 @@
+-- 코드를 작성해주세요
+SELECT  T1.ID
+    ,   T1.LENGTH
+FROM    FISH_INFO T1
+WHERE   T1.LENGTH IS NOT NULL
+ORDER BY
+        T1.LENGTH   DESC
+    ,   T1.ID       ASC
+LIMIT   10
