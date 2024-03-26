@@ -1,0 +1,7 @@
+-- 코드를 입력하세요
+SELECT  COUNT(*) as 'count'
+FROM (
+    SELECT  DISTINCT TT1.NAME
+    FROM    ANIMAL_INS TT1
+    WHERE   TT1.NAME IS NOT NULL
+) T1
