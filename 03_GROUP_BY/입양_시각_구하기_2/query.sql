@@ -1,0 +1,28 @@
+-- 코드를 입력하세요
+WITH RECURSIVE HOUR_TEMP_TABLE AS (
+    SELECT  1 AS 'HOUR'
+        ,   0 AS 'COUNT'
+    UNION ALL
+    SELECT  HOUR + 1
+        ,   COUNT
+    FROM    HOUR_TEMP_TABLE
+    WHERE   HOUR < 23
+)
+
+SELECT  HOUR
+    ,   SUM(COUNT)
+FROM (
+    SELECT  HOUR(T1.DATETIME)   AS 'HOUR'
+        ,   COUNT(*)            AS 'COUNT'
+    FROM    ANIMAL_OUTS T1
+    GROUP BY
+            HOUR(T1.DATETIME)
+    UNION ALL
+    SELECT  HOUR
+        ,   COUNT
+    FROM    HOUR_TEMP_TABLE
+) T
+GROUP BY
+        HOUR
+ORDER BY
+        HOUR ASC
