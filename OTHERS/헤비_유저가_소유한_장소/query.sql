@@ -1,0 +1,14 @@
+-- 코드를 입력하세요
+SELECT  ID
+    ,   NAME
+    ,   HOST_ID
+FROM    PLACES T1
+WHERE   T1.HOST_ID IN (
+    SELECT  DISTINCT TT1.HOST_ID
+    FROM    PLACES TT1
+    GROUP BY
+            TT1.HOST_ID
+    HAVING  COUNT(*) >= 2
+)
+ORDER BY
+        T1.ID ASC
