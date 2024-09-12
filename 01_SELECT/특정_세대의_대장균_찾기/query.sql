@@ -1,0 +1,14 @@
+-- 코드를 작성해주세요
+SELECT  ID
+FROM    ECOLI_DATA T1
+WHERE   T1.PARENT_ID IN (
+    SELECT  ID
+    FROM    ECOLI_DATA TT1
+    WHERE   TT1.PARENT_ID IN (
+        SELECT  ID
+        FROM    ECOLI_DATA TTT1
+        WHERE   TTT1.PARENT_ID IS NULL
+    )
+)
+ORDER BY
+        T1.ID   ASC
