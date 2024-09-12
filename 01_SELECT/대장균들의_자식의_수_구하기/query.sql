@@ -1,0 +1,14 @@
+-- 코드를 작성해주세요
+SELECT  T1.ID   AS ID
+    ,   IFNULL(T2.CHILD_COUNT, 0)   AS CHILD_COUNT
+FROM    ECOLI_DATA T1
+LEFT JOIN   (
+    SELECT  TT1.PARENT_ID
+        ,   COUNT(*)    AS CHILD_COUNT
+    FROM    ECOLI_DATA TT1
+    GROUP BY
+            TT1.PARENT_ID
+) T2
+    ON  T2.PARENT_ID    = T1.ID
+ORDER BY
+    T1.ID   ASC
